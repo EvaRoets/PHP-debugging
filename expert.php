@@ -93,23 +93,23 @@ echo login('wrong@example', 'wrong');
 /* You can change code again */
 
 new_exercise(9);
-////function isLinkValid(string $link) {
-////    $unacceptables = array('https:','.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
-////    foreach ($unacceptables as $unacceptable) {
-////        if (strpos($link, $unacceptable) == true) {
-////            return "Unacceptable Found</br>";
-////        };
-////    }
-////    return "Acceptable</br>";
-////}
-////invalid link
-//isLinkValid('http://www.google.com/hack.pdf');
-////invalid link
-//isLinkValid('https://google.com');
-////VALID link
-//isLinkValid('http://google.com');
-////VALID link
-//isLinkValid('http://google.com/test.txt');
+function isLinkValid(string $link) {
+    $unacceptables = array('https:','.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
+    foreach ($unacceptables as $unacceptable) {
+        if (strpos($link, $unacceptable) == true) {
+            return "Unacceptable Found</br>";
+        };
+    }
+    return "Acceptable</br>";
+}
+//invalid link
+isLinkValid('http://www.google.com/hack.pdf');
+//invalid link
+isLinkValid('https://google.com');
+//VALID link
+isLinkValid('http://google.com');
+//VALID link
+isLinkValid('http://google.com/test.txt');
 
 new_exercise(10);
 $areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
