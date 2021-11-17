@@ -40,18 +40,20 @@ print_r($arr);
 new_exercise(6);
 $arr = [];
 
-function combineNames($str1 = "", $str2 = ""){
+function combineNames($str1 = "", $str2 = ""): string
+{
     $params = [$str1, $str2];
     foreach ($params as $i => &$param) {
         if ($param == "") {
             $param = randomHeroName($i);
-//            print_r($param) // check if randomHeroName works, it doesnt so go check the function
+//            print_r($param) // check if randomHeroName works, it doesn't so go check the function
         }
     }
     return join(" - ", $params); // use return instead of echo,
 }
 
-function randomHeroName(){
+function randomHeroName(): string
+{
     $hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black", "Carol"];
     $hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil", "marvel"];
     $heroes = [$hero_firstnames, $hero_lastnames];
@@ -65,7 +67,7 @@ function randomHeroName(){
 echo "Here is the name: " . combineNames();
 
 new_exercise(7);
-function copyright(string $year)
+function copyright(string $year): string
 {
     return "&copy; $year BeCode";
 }
@@ -74,7 +76,7 @@ echo copyright(date("Y"));
 
 
 new_exercise(8);
-function login(string $email, string $password)
+function login(string $email, string $password): string
 {
     if ($email === "john@example.be" || $password === "pocahontas") {
         return "Welcome John Smith </br>";
@@ -93,23 +95,26 @@ echo login('wrong@example', 'wrong');
 /* You can change code again */
 
 new_exercise(9);
-function isLinkValid(string $link) {
+function isLinkValid(string $link): string
+{
     $unacceptables = array('https:','.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
     foreach ($unacceptables as $unacceptable) {
         if (strpos($link, $unacceptable) == true) {
             return "Unacceptable Found</br>";
-        };
+        }
     }
     return "Acceptable</br>";
 }
+
+/* do not change any code below */
 //invalid link
-isLinkValid('http://www.google.com/hack.pdf');
+isLinkValid("https://www.google.com/hack.pdf");
 //invalid link
+isLinkValid("https://google.com");
+//VALID link
 isLinkValid('https://google.com');
 //VALID link
-isLinkValid('http://google.com');
-//VALID link
-isLinkValid('http://google.com/test.txt');
+isLinkValid('https://google.com/test.txt');
 
 new_exercise(10);
 $areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
